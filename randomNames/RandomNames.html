@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;padding: 0;
+		}
+		.sj{
+			height: 30px;width: 100px;
+			background: skyblue;
+			color: white;
+			text-align: center;
+			line-height: 30px;
+			font-size: 16px;
+			cursor: pointer;
+			margin:30px;
+		}
+		.contain{
+			height: 30px;
+			width: 100px;
+			margin-left: 30px;
+			text-align: center;
+			font-size:20px;
+		}
+	</style>
+	<script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<div class="sj">随机人名</div>
+	<div class="contain">
+	</div>
+	<script>
+		function suiji(min,max){
+			var rand = Math.floor(Math.random()*(max-min+1)+min);
+			return rand;
+		}
+        var arr =['鲁旭','李文娟','丁雪鹏','马瑞文','李明明','安禹燕','李国良','吴彦红','马月兰','宋笑迎','李栋鹏','康旭','刘道云','任志伟','李洁','李长明','付正权','高天雷','余彩凤','蒋青','李欢','贾玉壮','袁金冬','张春岩','刘丽双','王艳','李帅','刘彤彤','刘桐彤','李维浩','刘林浩','刘威'];
+        function rm(){
+        	var num = suiji(0,arr.length-1);
+        	var hrm = arr[num];
+        	return hrm;
+        }
+      //console.log(rm());
+	  //刷新进入页面时，一直调用出现；直到点击时，停止人名；
+	  function jzym(){
+	  	//获取随机颜色；
+			var ysz = suiji(0,225);
+			var ysz1 =suiji(0,225);
+			var ysz2 =suiji(0,225);
+			var color = 'rgb('+ysz+','+ysz1+','+ysz2+')';
+			$('.contain').html(rm());
+			document.querySelector('.contain').style.color = color;
+	  }
+	    var timer = setInterval(jzym,100);
+	    var i = 0;
+		$('.sj').click(function(){
+			clearInterval(timer);
+			if(i==0){
+				i=1;
+			}
+			else{
+				timer =setInterval(jzym,100);
+				i = 0;
+			}
+		});
+		//加入键盘事件；
+	    document.body.onkeyup = function(e){
+	    	var key = e.keyCode;
+			console.log(e.keyCode);
+			if(key==13){
+				clearInterval(timer);
+			}
+			else if(key==32){
+				
+				//每次点击时将上一次的调用的事件清楚；
+				
+				clearInterval(timer);
+				
+				timer = setInterval(jzym,100);
+			}
+	    }
+	    new Date().toLocaleString()
+	</script>
+</body>
+</html>
