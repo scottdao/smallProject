@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;padding: 0;
+
+			}
+			body{
+				position: relative;
+			}
+		
+			#tanslate,#scale{
+				position: absolute;
+				height: 100px;
+				width: 100px;
+				background: orange;
+				left: 100px;
+				top: 100px;
+				transition: 1s ease-in;
+			}
+			#box:hover #scale{
+				top: 200px;
+				transform:rotateX(180deg);
+				-ms-transform: rotateX(180deg);
+				-moz-transform:rotateX(180deg);
+				/*z-index: 0;*/	
+			}
+			#box:hover #tanslate{
+				transform: rotate(360deg);
+			}
+			
+			
+			
+			
+			/*第二个旋转效果开始*/
+			#tanslateOne,#scaleOne{
+				position: absolute;
+				height: 100px;
+				width: 100px;
+				background: orange;
+				left: 250px;
+				top: 250px;
+				transition: 1s ease-in;
+				
+			}
+			#tanslateOne{
+				transform: rotateY(180deg);
+				opacity: 0;
+				
+			}
+			#scaleOne{
+				transform: rotateY(0deg);
+				opacity: 1;
+				box-shadow: 0 0 10px 5px rosybrown;	
+			}
+			#boxOne:hover #scaleOne{
+				transform: rotateY(180deg);
+				/*z-index: -1;*/
+				opacity: 0;
+				
+				
+			}
+			#boxOne:hover #tanslateOne{
+				transform: rotateY(0deg);
+				opacity: 1;
+				box-shadow: 0 0 10px 5px orangered;	
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		<div id="tanslate">我呀1</div>
+		<div id="scale">我呀2</div>
+		</div>
+		<!--旋转翻页-->
+		<div id="boxOne">
+		    <div id="tanslateOne">我呀1111111</div>
+		    <div id="scaleOne">我呀222222</div>
+		</div>
+	</body>
+</html>

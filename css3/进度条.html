@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;
+			}
+			#progress{
+				margin: 100px;
+				background: skyblue;
+				height: 15px;
+				width: 0px;
+				border-radius: 20px;
+				font-size: 15px;
+				text-align: center;
+				line-height: 15px;
+
+			}
+			.btn{
+				background: rgb(200,200,200);
+				border: 1px solid gray;
+				height: 30px;
+				width: 80px;
+				margin-left: 100px;
+				outline: none;
+			}
+			.btn:hover{
+				background: gray;
+				color: white;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="progress">
+			0%
+		</div>
+		<button class="btn">跑起来</button>
+		<script>
+			var  btn = document.querySelector('.btn');
+			var progress = document.querySelector('#progress');
+			var timer;
+			btn.onclick = function(){
+				progress.style.width='0';
+				//取消定时器
+				cancelAnimationFrame(timer);
+				//设置定时器,改款定时器，IE9存在兼容性问题；
+				timer =window.requestAnimationFrame(function fn(){
+					if(parseInt(progress.style.width)<500){
+						progress.style.width = parseInt(progress.style.width)+5+'px';
+						progress.innerHTML = parseInt(progress.style.width)/5+'%';
+						timer=requestAnimationFrame(fn);
+						if(parseInt(progress.style.width)>0){
+							progress.style.color = 'white';
+						}
+					}else{
+						cancelAnimationFrame(timer);
+					}
+				})
+				
+			}
+			//兼容性可以采用setTimeout进行兼容；
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;padding: 0;
+
+			}
+			body{
+				position: relative;
+			}
+		
+			#tanslate,#scale{
+				position: absolute;
+				height: 100px;
+				width: 100px;
+				background: orange;
+				left: 100px;
+				top: 100px;
+				transition: .5s ease-in;
+			}
+			#box:hover #scale{
+				transform:skew(180deg,180deg);
+				-ms-transform: skew(180deg,180deg);
+				-moz-transform: skew(180deg,180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		<div id="tanslate">我呀</div>
+		<div id="scale">我呀</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;padding: 0;
+
+			}
+			/*六边形的样式开始*/
+			#hexagon{
+				height:auto;
+				width: auto;
+				margin: 300px;
+				position: relative;
+			}
+			#hexagon .hexagon_old{
+				display: block;
+				height: 300px;
+				width: 150px;
+				background: url(hexagon.png) no-repeat;
+				background-size: contain;
+				position: absolute;
+				
+			}
+			#hexagon .hexagon-active{
+				display: block;
+				height: 300px;
+				width: 150px;
+				background: url(scut3.png) no-repeat;
+				background-size: contain;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				transition: 1s linear;
+			}
+			#hexagon:hover .hexagon-1{
+				top: -135px;
+				left: -80px;
+				opacity: 1;
+			}
+			#hexagon:hover .hexagon-2{
+				top: -135px;
+				left: 80px;
+				opacity: 1;
+				
+			}
+			#hexagon:hover .hexagon-3{
+				top: 0;
+				left:-160px;
+				opacity: 1;
+				
+			}
+			#hexagon:hover .hexagon-4{
+				top: 0;
+				left: 160px;
+				opacity: 1;
+				
+			}
+			#hexagon:hover .hexagon-5{
+				top: 135px;
+				left: -80px;
+				opacity: 1;
+				
+			}
+			#hexagon:hover .hexagon-6{
+				top: 135px;
+				left: 80px;
+				opacity: 1;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<!--画一个六边形-->
+		<div id="hexagon">
+			<a class="hexagon_old" href="javascript:;"></a>
+			<a href="javascript:;" class="hexagon-active hexagon-1 "></a>
+			<a href="javascript:;" class="hexagon-active hexagon-2 "></a>
+			<a href="javascript:;" class="hexagon-active hexagon-3 "></a>
+			<a href="javascript:;" class="hexagon-active hexagon-4 "></a>
+			<a href="javascript:;" class="hexagon-active hexagon-5 "></a>
+			<a href="javascript:;" class="hexagon-active hexagon-6 "></a>
+		</div>
+		
+	</body>
+</html>

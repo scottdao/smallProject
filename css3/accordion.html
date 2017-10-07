@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			垂直手风琴css3
+		</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.play {
+				background: white;
+				color: #424242;
+				margin: 0 auto;
+				width: 500px;
+				padding: 10px;
+			}
+			.play>a{
+				height: 30px;
+				width:80px;
+				display: block;
+				color: gray;
+				border: 1px solid gray;
+				text-align: center;
+				line-height: 30px;
+				text-decoration: none;
+				transition: 1s linear;
+			}
+			.play>a:hover{
+				background: orange;
+				color: white;
+				border-color: orange;
+			}
+			.menu{
+				margin: 10px;
+			}
+			.menu h2{
+				margin: 10px 0;
+				padding: 0;
+				position: relative;
+				
+			}
+			.menu h2:after{
+				content: '';
+				display: block;
+				width: 0;
+				height: 0;
+				position: absolute;
+				border: 5px solid white;
+				border-color: white transparent transparent;  
+				top: 15px;
+				right: 10px;
+				
+			}
+			.menu h2 a{
+				display: block;
+				background: #8F8F8F;
+				background: linear-gradient( to top, #cecece, #8f8f8f); 
+				border-radius: 5px;
+				font-size: 13px;
+				padding: 10px;
+				text-decoration: none;
+				color: #424242;
+				font-weight: normal;
+				text-shadow: 2px 2px 2px #aeaeae;
+			}
+			/*target指向必须是未绑定id和href元素且包裹id和href绑定的元素*/
+			.play :target h2 a,
+			.menu h2 a:focus,
+			.menu h2 a:hover,
+			.menu h2 a:active{
+				background: #2288dd;
+				color: white;
+				background: linear-gradient(to top,#6bb2ff,#2288dd);
+			}
+			.menu p{
+				height: 0;
+				overflow: hidden;
+				transition: height .5s linear;
+			}
+			.play :target p{
+				height: 100px;
+				overflow: auto;
+			}
+			.play :target h2:after{
+				border-color:transparent transparent transparent white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="text-align: center;">(通过锚点(id值和a中href进行绑定)加上(:target)伪类)</div>
+		<div class="play">
+			<a href="#">总体</a>
+			<div class="menu" id="head">
+				<h2><a href="#head">头部</a></h2>
+				<p>（燕燕 邶-bei风） 庄姜 
+					燕燕于飞，差池其羽。 
+					之子于归，远送于野。 
+					瞻望弗及，泣涕如雨。 
+					燕燕于飞，颉之颃之。 
+					之子于归，远于将之。 
+					瞻望弗及，伫立以泣。 
+					燕燕于飞，下上其音。
+					（呢喃，于燕于音） 之子于归，远送于南。
+					 瞻望弗及，实劳我心。 
+					 仲氏任只，其心塞渊。
+					 （人有六种品行，任为一品） 终温且惠，淑慎其身。
+					 (善良，人品) 先君之思，以勖寡人。 
+					 (善良，人品) 美丽容颜之下，善良的心灵！
+				</p>
+		
+			</div>
+			<div class="menu" id="body">
+				<h2><a href="#body">身体</a></h2>
+				<p>（燕燕 邶-bei风） 庄姜 
+					燕燕于飞，差池其羽。 
+					之子于归，远送于野。 
+					瞻望弗及，泣涕如雨。 
+					燕燕于飞，颉之颃之。 
+					之子于归，远于将之。 
+					瞻望弗及，伫立以泣。 
+					燕燕于飞，下上其音。
+					（呢喃，于燕于音） 之子于归，远送于南。
+					 瞻望弗及，实劳我心。 
+					 仲氏任只，其心塞渊。
+					 （人有六种品行，任为一品） 终温且惠，淑慎其身。
+					 (善良，人品) 先君之思，以勖寡人。 
+					 (善良，人品) 美丽容颜之下，善良的心灵！
+				</p>
+			</div>
+			<div class="menu" id="foot">
+				<h2><a href="#foot">脚部</a></h2>
+				<p>（燕燕 邶-bei风） 庄姜 
+					燕燕于飞，差池其羽。 
+					之子于归，远送于野。 
+					瞻望弗及，泣涕如雨。 
+					燕燕于飞，颉之颃之。 
+					之子于归，远于将之。 
+					瞻望弗及，伫立以泣。 
+					燕燕于飞，下上其音。
+					（呢喃，于燕于音） 之子于归，远送于南。
+					 瞻望弗及，实劳我心。 
+					 仲氏任只，其心塞渊。
+					 （人有六种品行，任为一品） 终温且惠，淑慎其身。
+					 (善良，人品) 先君之思，以勖寡人。 
+					 (善良，人品) 美丽容颜之下，善良的心灵！
+				</p>
+			</div>
+		
+		</div>
+	</body>
+
+</html>
