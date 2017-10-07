@@ -79,7 +79,7 @@
 				$left.onclick = function(){
 					
 					$li[con].style.opacity =0;
-					
+					$liDot[con].className = '';
 					con--;
 					if(con<0){
 						
@@ -88,6 +88,7 @@
 					}
 					
 					$li[con].style.opacity=1;
+					$liDot[con].className = 'active';
 					
 				}
 				//对其进行设置data-index属性
